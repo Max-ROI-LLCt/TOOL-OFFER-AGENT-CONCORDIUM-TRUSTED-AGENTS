@@ -1,8 +1,8 @@
 # Tool Offer Agent
 
-**Turn public API/MCP documentation and your seller terms into a source-attributed offer draft you can review, correct, assess and export.** Tool Offer Agent is by Kingan Logic; this public judging repository is maintained under the GitHub organization **Max-ROI-LLCt**.
+**Turn public API/MCP documentation and your seller terms into a source-attributed offer draft you can review, correct, assess and export.** Tool Offer Agent is by Kingan Logic, a technology brand of Max R.O.I. LLC; this public judging repository is maintained under the GitHub organization **Max-ROI-LLCt**.
 
-**Stranger Builds winner — Best Use of Fetch AI.** Raj (Fetch AI) announced Tool Offer Agent as the category winner in the event Slack. The [original Fetch AI challenge](https://www.fetch.ai/events/hackathons/stranger-builds-1/hackpack) and the [original judging snapshot](https://github.com/Max-ROI-LLCt/TOOL-OFFER-AGENT-STRANGER-BUILDS/tree/c42a327af76939b4c8a601fc6e4ddffe168b5ddd) are preserved. The award is for Stranger Builds, not the ongoing Concordium event.
+**Stranger Builds winner — Best Use of Fetch AI.** Fetch AI announced Tool Offer Agent as the Best Use of Fetch AI category winner in the Stranger Builds event Slack. The [original Fetch AI challenge](https://www.fetch.ai/events/hackathons/stranger-builds-1/hackpack) and the [original judging snapshot](https://github.com/Max-ROI-LLCt/TOOL-OFFER-AGENT-STRANGER-BUILDS/tree/c42a327af76939b4c8a601fc6e4ddffe168b5ddd) are preserved. The award is for Stranger Builds, not the ongoing Concordium event.
 
 ## Concordium Trusted Agents — Checkpoint 1
 
@@ -144,6 +144,6 @@ Future updates are separately reviewed, owner-approved snapshots, not an automat
 
 ## License
 
-The original first-party software is **source-available under [PolyForm Noncommercial 1.0.0](LICENSE)**, adopted on November 7, 2026. You may use, modify and share it for noncommercial purposes under those terms, while preserving the [required attribution notice](NOTICE). Copyright remains with Kingan Logic; commercial reuse or resale requires separate permission. This is **not an open-source license**.
+The original first-party software is **source-available under [PolyForm Noncommercial 1.0.0](LICENSE)**, adopted on November 7, 2026. You may use, modify and share it for noncommercial purposes under those terms, while preserving the [required attribution notice](NOTICE). Copyright remains with Max R.O.I. LLC (Kingan Logic); commercial reuse or resale requires separate permission. This is **not an open-source license**.
 
-[NOTICE](NOTICE) also expressly permits organizers and judges to run and test this submission for evaluation, including on behalf of a commercial organization. It does not grant production access, authorize payments or change hosted-service terms. The owner may offer separate commercial licenses. [Third-party dependencies and bundled code keep their own licenses](THIRD-PARTY-NOTICES.md); ownership of Tool Offer Agent and FAHCE does not replace those terms. This license addition does not establish compliance with any organizer requirement for an open-source license.
+[NOTICE](NOTICE) also expressly permits organizers and judges to run and test this submission for evaluation, including on behalf of a commercial organization. It does not grant production access, authorize payments or change hosted-service terms. The owner may offer separate commercial licenses. [Third-party dependencies and bundled code keep their own licenses](THIRD-PARTY-NOTICES.md); ownership of Tool Offer Agent and FAHCE does not replace those terms. If the organizers need different terms to evaluate or fund this project, they can contact the maintainers through this repository.
