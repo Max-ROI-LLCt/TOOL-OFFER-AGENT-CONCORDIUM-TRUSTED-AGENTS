@@ -10,13 +10,15 @@
 
 | Available to judges on November 21, 2026 | What it proves |
 | --- | --- |
-| [Testnet agent #1206: card and registry readback](integrations/concordium/tool-offer-registration-card/testnet-1206-verification.json) · [CCDExplorer registry contract](https://ccdexplorer.io/testnet/contract/12802/0) | The retained active entry anchors the exact published card. This is identity evidence, not evidence of a payment. |
+| **Testnet — Tool Offer Agent #1206:** [owner account on CCDExplorer](https://ccdexplorer.io/testnet/account/19470/alias/TomNBePZ25YQ2oJTqXpTY) · [Agent Card](https://tooloffer.kinganlogic.com/.well-known/agent-card-tooloffer-testnet-1206-v1.json) · [registry readback](integrations/concordium/tool-offer-registration-card/testnet-1206-verification.json) | Compare the owner address and card hash with the active entry in the [Testnet registry](https://ccdexplorer.io/testnet/contract/12802/0). This identifies the registered owner, not the wallet paying for a purchase. |
 | [Exact-mandate verification](tool_offer_agent/concordium_mandate_auth.py) · [Concordium wallet proof](bridge/concordium-testnet/verify-account.mjs) | Offline tests distinguish an agent’s signature, account-key control and permission to spend. Neither proof moves funds. |
 | [Runnable demo and verifier](docs/TRUSTED-AGENTS.md#run-the-checkpoint) · [buyer acceptance checker](tool_offer_agent/weather_report_acceptance.py) | A valid synthetic report passes; changing one summary value fails against the buyer’s independently reconstructed source. No login or wallet needed. |
 
 **Try it now:** from the repository root, run `python3.12 -m tests.trusted_agents_demo`. The expected results are `LOCAL_ACCEPTED`, `LOCAL_REJECTED` (check `A09`), and `NOT_SUBMITTED`.
 
 **Still to demonstrate:** a live buyer-authorized Testnet CCD purchase through FAHCE, x402 settlement, and a portable record tying finality to accepted delivery or bounded repair and recovery. The earlier Base USDC payment is not that proof. [Build log, reused components, production gates and submission checklist →](docs/TRUSTED-AGENTS.md)
+
+**Path to production — Mainnet identity:** Tool Offer Agent is registered separately as **#5135**. See the [Mainnet owner account on CCDExplorer](https://ccdexplorer.io/mainnet/account/104920/alias/cFb6Jdx4D73bBTCfiQXEc) and the [Mainnet Agent Card](https://tooloffer.kinganlogic.com/.well-known/agent-card-tool-offer-5135-v1.json). This registration does not show that Mainnet checkout is live. Neither owner-account link is a payment receipt.
 
 ## Try It In ASI:One
 
