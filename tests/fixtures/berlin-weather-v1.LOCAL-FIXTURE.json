@@ -1,0 +1,5 @@
+{
+  "fixture_scope": "SYNTHETIC LOCAL FORECAST VALUES ONLY; NOT LIVE WEATHER, API RETRIEVAL OR SOURCE-USE CLEARANCE",
+  "temperature_samples_celsius": [-2.25, -2, -1.5, -1.25, -1, 0, 1.25, 2.5, 4, 5.25, 6, 7.5, 8, 8.25, 8, 7, 6.5, 5.25, 4, 3.5, 2.25, 1, 0.5, -0.25, -1],
+  "preceding_hour_probability_samples_percent": [99, 80, 75, 70, 60, 0, 0, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100]
+}

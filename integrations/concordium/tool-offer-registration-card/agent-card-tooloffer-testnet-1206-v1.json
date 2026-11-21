@@ -1,0 +1,81 @@
+{
+  "type": "https://eips.ethereum.org/EIPS/eip-8004#registration-v1",
+  "name": "Tool Offer Agent",
+  "description": "Kingan Logic's source-attributed API and MCP offer preparation agent. Reads public documentation, collects seller-stated terms, drafts and revises buyer offers, assesses readiness, and exports reviewed records. The MCP/REST preparation interface does not publish offers, execute purchases, certify sellers or authorize payments.",
+  "skills": [
+    {
+      "id": "documentation_intake",
+      "name": "Public documentation intake",
+      "description": "Read public API/MCP documentation and retain source-attributed evidence.",
+      "tags": []
+    },
+    {
+      "id": "offer_preparation",
+      "name": "Buyer offer preparation",
+      "description": "Collect seller terms and draft and revise a buyer-facing offer.",
+      "tags": []
+    },
+    {
+      "id": "readiness_assessment",
+      "name": "Offer readiness assessment",
+      "description": "Evaluate retained offer readiness without granting approval or payment authority.",
+      "tags": []
+    },
+    {
+      "id": "offer_export",
+      "name": "Offer export",
+      "description": "Export structured and human-readable offer records with verifiable multipart retrieval.",
+      "tags": []
+    }
+  ],
+  "version": "1.4.9",
+  "provider": {
+    "organization": "Max ROI LLC (Kingan Logic)",
+    "url": "https://kinganlogic.com"
+  },
+  "services": [
+    {
+      "name": "web",
+      "endpoint": "https://tooloffer.kinganlogic.com/offers/tooloffer-testnet-v1"
+    }
+  ],
+  "x-kinganlogic-offer": {
+    "network": "concordium:testnet",
+    "asset": "CCD",
+    "pricing": "Public synthetic report preparation: 1 Testnet CCD. Network fees are separate.",
+    "url": "https://tooloffer.kinganlogic.com/offers/tooloffer-testnet-v1"
+  },
+  "capabilities": {
+    "extensions": [
+      {
+        "uri": "https://docs.concordium.com/a2a-extensions/concordium-badge/v1",
+        "description": "Verified by Concordium badge — on-chain agent identity in a CIS-8004 registry",
+        "required": false,
+        "params": {
+          "tokenAddress": "ccd:4221332d34e1694168c2a0c0b3fd0f27/cis-2:JyP9XKcq6jVeeKxnfj2Rk",
+          "owner": {
+            "account": "ccd:4221332d34e1694168c2a0c0b3fd0f27:4FoWbP7qANwED5SkWgiEt7UEYgGuBTomNBePZ25YQ2oJTqXpTY"
+          },
+          "agentWallet": "ccd:4221332d34e1694168c2a0c0b3fd0f27:4FoWbP7qANwED5SkWgiEt7UEYgGuBTomNBePZ25YQ2oJTqXpTY",
+          "contracts": {
+            "cis8004": "ccd:4221332d34e1694168c2a0c0b3fd0f27:12802.0",
+            "cis8": "ccd:4221332d34e1694168c2a0c0b3fd0f27:12801.0"
+          },
+          "verify": "Resolve tokenAddress via CIS-8004 agent_of; confirm owner + status=Active + card SHA-256 == metadata_hash.",
+          "verification": {
+            "service": "Concordium Agent Registry",
+            "verifyUrl": "https://agent-registry-mcp.concordium.com/v1/badge-check/JyP9XKcq6jVeeKxnfj2Rk",
+            "mcp": "https://agent-registry-mcp.concordium.com/mcp",
+            "docs": "https://docs.concordium.com/en/mainnet/technical-reference/agent-registry/concordium-badge.html"
+          }
+        }
+      }
+    ]
+  },
+  "registrations": [
+    {
+      "agentId": 1206,
+      "agentRegistry": "ccd:4221332d34e1694168c2a0c0b3fd0f27:12802.0"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "delivery_contract_proposal": {
+    "hourly_fields": [
+      "interval_end_local",
+      "interval_end_utc",
+      "interval_start_local",
+      "interval_start_utc",
+      "precipitation_probability_percent",
+      "precipitation_source_time_utc",
+      "source_id",
+      "temperature_2m_celsius",
+      "temperature_source_time_utc"
+    ],
+    "limitations_text": "Forecast, not observed weather or a guarantee. Temperature is at each interval start; probability concerns more than 0.1 mm in the preceding hour ending at each interval end. The lowest-probability interval is not a promise of dry or safe conditions. Data capture time is known; forecast model issuance time is not established. Grid-cell coordinates may differ from the requested point. Source data and access rights are not certified by FAHCE.",
+    "report_fields": [
+      "attribution",
+      "buyer_account",
+      "forecast_date",
+      "generated_at_utc",
+      "hourly",
+      "limitations",
+      "location",
+      "prepared_by_account",
+      "proposal_id",
+      "schema",
+      "source",
+      "summary",
+      "timezone",
+      "units"
+    ]
+  },
+  "parties": {
+    "buyer_account": "LOCAL_FIXTURE_BUYER",
+    "mandate_origin": "https://tooloffer.kinganlogic.com",
+    "proposed_agent": "LOCAL_FIXTURE_AGENT",
+    "recipient_account": "LOCAL_FIXTURE_SELLER",
+    "seller_account": "LOCAL_FIXTURE_SELLER"
+  },
+  "scope": "PUBLIC FIXTURE ONLY; no customer, consent, or wallet"
+}

@@ -2,6 +2,22 @@
 
 **Turn public API/MCP documentation and your seller terms into a source-attributed offer draft you can review, correct, assess and export.** Tool Offer Agent is by Kingan Logic; this public judging repository is maintained under the GitHub organization **Max-ROI-LLCt**.
 
+**Stranger Builds winner — Best Use of Fetch AI.** Raj (Fetch AI) announced Tool Offer Agent as the category winner in the event Slack. The [original Fetch AI challenge](https://www.fetch.ai/events/hackathons/stranger-builds-1/hackpack) and the [original judging snapshot](https://github.com/Max-ROI-LLCt/TOOL-OFFER-AGENT-STRANGER-BUILDS/tree/c42a327af76939b4c8a601fc6e4ddffe168b5ddd) are preserved. The award is for Stranger Builds, not the ongoing Concordium event.
+
+## Concordium Trusted Agents — Checkpoint 1
+
+**Can a buyer let an agent arrange one purchase without handing it a wallet?** For [Encode × Concordium Trusted Agents](https://www.encodeclub.com/programmes/concordium-trusted-agents-hackathon), we’re extending the existing agent so the buyer names the service, supplier, price and permitted action. The parties check registry identity; FAHCE checks the proposed action before execution. The buyer retains a separate wallet approval. After delivery, the buyer checks the actual work, not just the seller’s receipt.
+
+| Available to judges on November 21, 2026 | What it proves |
+| --- | --- |
+| [Testnet agent #1206: card and registry readback](integrations/concordium/tool-offer-registration-card/testnet-1206-verification.json) · [CCDExplorer registry contract](https://ccdexplorer.io/testnet/contract/12802/0) | The retained active entry anchors the exact published card. This is identity evidence, not evidence of a payment. |
+| [Exact-mandate verification](tool_offer_agent/concordium_mandate_auth.py) · [Concordium wallet proof](bridge/concordium-testnet/verify-account.mjs) | Offline tests distinguish an agent’s signature, account-key control and permission to spend. Neither proof moves funds. |
+| [Runnable demo and verifier](docs/TRUSTED-AGENTS.md#run-the-checkpoint) · [buyer acceptance checker](tool_offer_agent/weather_report_acceptance.py) | A valid synthetic report passes; changing one summary value fails against the buyer’s independently reconstructed source. No login or wallet needed. |
+
+**Try it now:** from the repository root, run `python3.12 -m tests.trusted_agents_demo`. The expected results are `LOCAL_ACCEPTED`, `LOCAL_REJECTED` (check `A09`), and `NOT_SUBMITTED`.
+
+**Still to demonstrate:** a live buyer-authorized Testnet CCD purchase through FAHCE, x402 settlement, and a portable record tying finality to accepted delivery or bounded repair and recovery. The earlier Base USDC payment is not that proof. [Build log, reused components, production gates and submission checklist →](docs/TRUSTED-AGENTS.md)
+
 ## Try It In ASI:One
 
 Open [Tool Offer Agent](https://tooloffer.kinganlogic.com/), choose **Launch Agent**, and send **`start`** to **`@tool-offer-builder`**. Choose **Start with my tool**, supply public documentation and the requested seller terms, then ask for **`draft`**, **`review intake`**, **`readiness`** or **`buyer explanation`**. **Try a fictional example** is a restricted demonstration, not a live Parcel API or permission to sell it.
@@ -17,7 +33,7 @@ Open [Tool Offer Agent](https://tooloffer.kinganlogic.com/), choose **Launch Age
 
 Separate earlier testing reported an introductory-only natural-language readiness response, intake review opening a blank replacement form, and crowded draft headings. Revision 86 routes supported readiness requests to the substantive assessment, displays retained intake with a correction/cancellation path, and separates draft headings and fields. Identical replacements preserve revision; fictional restrictions remain enforced. [The dated correction report](docs/CORRECTIONS-2026-11-07.md) records the changes and completed checks.
 
-**Deployed product:** Tool Offer Agent **1.4.9**, Agentverse **revision 86**, release **`66979784d826683d48d83d6639e924078a3a3476c3ab488a93a9a57519767f19`**. The canonical manifest and public Agentverse README both matched this release on the November 7 documentation readback. [Deployment evidence](DEPLOYED-RELEASE.md) identifies the executable source; this public Git commit identifies the judging snapshot and its documentation/license additions.
+**November 7 Stranger Builds deployment:** Tool Offer Agent **1.4.9**, Agentverse **revision 86**, release **`66979784d826683d48d83d6639e924078a3a3476c3ab488a93a9a57519767f19`**. The canonical manifest and public Agentverse README both matched this release on the November 7 documentation readback. [Deployment evidence](DEPLOYED-RELEASE.md) identifies that executable source; it does not describe a Concordium checkout deployment.
 
 **Registry history is separate:** the completed **1.4.9** publication at **03:32:16.914361 UTC on November 7** corresponds to release **`294379abcc1a2df39f22d9aa94423f2902e5353bb74fc29411e657e6d2c0afa1`**, not revision 86. The later correction deployment retained application version 1.4.9 but has the distinct release ID above. The generated discovery block below preserves the historical receipt's wording: publication alone did not deploy corrections; **the later revision-86 deployment did**. No new registry publication or version bump is claimed. See [the dated source mapping](PUBLICATION-HISTORY.md#deployed-source-and-historical-records).
 
