@@ -6,17 +6,18 @@
 
 ## Concordium Trusted Agents — Checkpoint 1
 
-**Can a buyer let an agent arrange one purchase without handing it a wallet?** For [Encode × Concordium Trusted Agents](https://www.encodeclub.com/programmes/concordium-trusted-agents-hackathon), we’re extending the existing agent so the buyer names the service, supplier, price and permitted action. The parties check registry identity; FAHCE checks the proposed action before execution. The buyer retains a separate wallet approval. After delivery, the buyer checks the actual work, not just the seller’s receipt.
+**Can a buyer let an agent arrange one purchase and keep control of the wallet?** On November 22, Tool Offer submitted its saved synthetic Berlin report and supporting document to FAHCE for a Diagnose assessment. The wallet owner approved one 52 CCD payment on Concordium Testnet. The transfer finalized, and FAHCE returned a signed determination. Tool Offer and FAHCE are both Kingan Logic projects. [Testnet transaction](https://ccdexplorer.io/testnet/transaction/9ccfb5f42aba74003a0caefb1b90387cc5a4dfad32870a68d5e6c5ee8a7bbbc9) · [Judge’s guide to the evidence](docs/TRUSTED-AGENTS.md#verify-the-november-22-testnet-purchase)
 
-| Available to judges on November 21, 2026 | What it proves |
+| Available to judges on November 22, 2026 | What it proves |
 | --- | --- |
 | **Testnet — Tool Offer Agent #1206:** [owner account on CCDExplorer](https://ccdexplorer.io/testnet/account/19470/alias/TomNBePZ25YQ2oJTqXpTY) · [Agent Card](https://tooloffer.kinganlogic.com/.well-known/agent-card-tooloffer-testnet-1206-v1.json) · [registry readback](integrations/concordium/tool-offer-registration-card/testnet-1206-verification.json) | Compare the owner address and card hash with the active entry in the [Testnet registry](https://ccdexplorer.io/testnet/contract/12802/0). This identifies the registered owner, not the wallet paying for a purchase. |
 | [Exact-mandate verification](tool_offer_agent/concordium_mandate_auth.py) · [Concordium wallet proof](bridge/concordium-testnet/verify-account.mjs) | Offline tests distinguish an agent’s signature, account-key control and permission to spend. Neither proof moves funds. |
 | [Runnable demo and verifier](docs/TRUSTED-AGENTS.md#run-the-checkpoint) · [buyer acceptance checker](tool_offer_agent/weather_report_acceptance.py) | A valid synthetic report passes; changing one summary value fails against the buyer’s independently reconstructed source. No login or wallet needed. |
+| [November 22 settlement and Diagnose evidence](evidence/concordium-testnet-diagnose-2026-11-22.json) | Block **51,129,761** records the native transfer with memo and a **4.141099 CCD** network fee. We matched the signed off-chain result to the transaction and submitted input. FAHCE marked all **48 of 48 claims supported** against the supplied synthetic evidence. |
 
 **Try it now:** from the repository root, run `python3.12 -m tests.trusted_agents_demo`. The expected results are `LOCAL_ACCEPTED`, `LOCAL_REJECTED` (check `A09`), and `NOT_SUBMITTED`.
 
-**Still to demonstrate:** a live buyer-authorized Testnet CCD purchase through FAHCE, x402 settlement, and a portable record tying finality to accepted delivery or bounded repair and recovery. The earlier Base USDC payment is not that proof. [Build log, reused components, production gates and submission checklist →](docs/TRUSTED-AGENTS.md)
+**Next evidence.** Trace an x402 challenge through settlement verification on Concordium, then show that a buyer can independently verify delivery and recover the same outcome after a restart. The failure case calls for bounded, authorized repair and revalidation. [Build log and production gates](docs/TRUSTED-AGENTS.md#from-checkpoint-to-production) · [Encode × Concordium Trusted Agents](https://www.encodeclub.com/programmes/concordium-trusted-agents-hackathon)
 
 **Path to production — Mainnet identity:** Tool Offer Agent is registered separately as **#5135**. See the [Mainnet owner account on CCDExplorer](https://ccdexplorer.io/mainnet/account/104920/alias/cFb6Jdx4D73bBTCfiQXEc) and the [Mainnet Agent Card](https://tooloffer.kinganlogic.com/.well-known/agent-card-tool-offer-5135-v1.json). This registration does not show that Mainnet checkout is live. Neither owner-account link is a payment receipt.
 

@@ -1,0 +1,35 @@
+{
+  "description": "One wallet-authorized FAHCE Diagnose purchase by Tool Offer Agent for its saved synthetic Berlin report.",
+  "settlement": {
+    "source": "Concordium Testnet node via gRPC. CCDExplorer provides a public lookup of the transaction.",
+    "network": "Concordium Testnet",
+    "genesis_hash": "4221332d34e1694168c2a0c0b3fd0f273809612cb13d000d5c2e00e85f50f796",
+    "transaction_type": "transferWithMemo",
+    "transaction_hash": "9ccfb5f42aba74003a0caefb1b90387cc5a4dfad32870a68d5e6c5ee8a7bbbc9",
+    "explorer": "https://ccdexplorer.io/testnet/transaction/9ccfb5f42aba74003a0caefb1b90387cc5a4dfad32870a68d5e6c5ee8a7bbbc9",
+    "status": "finalized",
+    "block_height": 51129761,
+    "block_hash": "9fe505c81a35a6ccb15fda21702ed1469b845e4895fb399dadb9c4bf60ddd16b",
+    "block_time_utc": "2026-11-22T03:28:34.623Z",
+    "amount_microccd": 52000000,
+    "network_fee_microccd": 4141099,
+    "memo_hex": "5820889cf6e628f69ec7917584dd2308f368b9ea1693492515472b1f87d56be07191"
+  },
+  "diagnose": {
+    "source": "Maintainer verification of the original signed FAHCE response retrieved from the seller record for this invoice. Only the summary and digests are public here.",
+    "operation": "diagnose",
+    "input_sha256": "d8766c72f91b984438bfff0fded80cc418e0f30f945123b91fbab3822ebef9dc",
+    "signed_response_file_sha256": "9f20357fcaff6f0468a54d8c6bf173c7cfb6d90342badaecc45f6424adabb9a6",
+    "issued_at_utc": "2026-11-22T03:33:28.172Z",
+    "engine_version": "fahce-pilot-deterministic-v0.2.14-concordium-ccd-rc1",
+    "attestation_policy_sha256": "bc6128579885745d6915cf370c30bb57cc5c49462b9c660460828c3f5a81ae40",
+    "verification": "Checked the signature at issuance against pinned Microsoft Azure Attestation public keys and the FAHCE policy. Matched the signed input and transaction binding, invoice memo, and every submitted claim.",
+    "determination_status": "DETERMINATION_COMPLETE",
+    "state": "CLEAR_WITH_CEILING",
+    "claim_ceiling": "PILOT_DETERMINISTIC_HEURISTIC_ONLY_NO_MODEL_ANALYSIS",
+    "submitted_claims": 48,
+    "supported_claims": 48,
+    "contradictions": 0,
+    "billable": true
+  }
+}
