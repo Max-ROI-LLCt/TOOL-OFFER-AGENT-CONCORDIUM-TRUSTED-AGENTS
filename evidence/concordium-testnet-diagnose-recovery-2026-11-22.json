@@ -1,0 +1,54 @@
+{
+  "operation": "diagnose",
+  "network": "Concordium Testnet",
+  "input_sha256": "d8766c72f91b984438bfff0fded80cc418e0f30f945123b91fbab3822ebef9dc",
+  "signed_response_sha256": "9f20357fcaff6f0468a54d8c6bf173c7cfb6d90342badaecc45f6424adabb9a6",
+  "transaction_hash": "9ccfb5f42aba74003a0caefb1b90387cc5a4dfad32870a68d5e6c5ee8a7bbbc9",
+  "settlement_method": "Native TransferWithMemo against a FAHCE invoice. The buyer wallet approved the transfer. The seller checked finalized payment against the invoice and memo.",
+  "account_history": {
+    "observed_at": "2026-11-22T05:13:44.527914+00:00",
+    "from_exclusive_id": 3285105,
+    "invoice_created_utc": "2026-11-22T03:28:23.771Z",
+    "account_records": 12,
+    "matching_transfers": 1
+  },
+  "buyer_acceptance": {
+    "source_file": "berlin-synthetic-source-2026-11-17.json",
+    "source_sha256": "0f701cb7e2bdb1a28830afa38f27db68057091b8c28bfb195e6fb9a3e62acbe8",
+    "source_samples": 25,
+    "intervals": 24,
+    "checked_claims": 48,
+    "sorted_claim_and_support_pairs_sha256": "2c36a5cfb6d429fa7b48d898dc7e0af0f60f64f0c11cc1082d9190c2de184ff3",
+    "verdict": "CLEAR_WITH_CEILING",
+    "scope": "Maintainer reran the buyer check against the original signed response and saved input. Public reproduction covers the synthetic source, expected claims commitment and on-chain transfer."
+  },
+  "seller_record_reads": [
+    {
+      "observed_utc": "2026-11-22T04:35:47.873732+00:00",
+      "admissions": 1,
+      "recorded_dispatches": 1,
+      "distinct_runs": 1,
+      "signed_result_sha256": "9f20357fcaff6f0468a54d8c6bf173c7cfb6d90342badaecc45f6424adabb9a6"
+    },
+    {
+      "observed_utc": "2026-11-22T04:40:27.256657+00:00",
+      "admissions": 1,
+      "recorded_dispatches": 1,
+      "distinct_runs": 1,
+      "signed_result_sha256": "9f20357fcaff6f0468a54d8c6bf173c7cfb6d90342badaecc45f6424adabb9a6"
+    }
+  ],
+  "dispatch_run_matches_signed_result": true,
+  "restart": {
+    "action": "Tool Offer redeployed the Testnet buyer bridge between the two seller readbacks.",
+    "authenticated_buyer_download": "Pending comparison of a receipt exported after restart with the original signed response."
+  },
+  "mandate": {
+    "local_test": "tests.test_concordium_mandate_auth.MandateSignatureTests.test_changed_mandate_with_matching_changed_action_denied",
+    "live_paid_order_pre_execution_binding": "No captured FAHCE pre-execution decision bound to the buyer mandate for this order."
+  },
+  "http_402": {
+    "paid_concordium_order": "No Concordium HTTP 402 challenge, issuer or challenge-bound settlement verifier recorded. The private integration uses a native CCD invoice.",
+    "separate_historical_probe": "The anonymous POST /api/v1/diagnose returned a Base-USDC x402 challenge on eip155:8453 for the published example."
+  }
+}
