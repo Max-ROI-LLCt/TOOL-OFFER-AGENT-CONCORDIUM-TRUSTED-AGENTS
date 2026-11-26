@@ -1,0 +1,28 @@
+{
+  "service": "FAHCE Diagnose",
+  "network": "Concordium Mainnet",
+  "invoice_id": "e78b972e-ba60-44ea-8e23-8d5610d5e870",
+  "replaces_expired_invoice_id": "5addf462-cd58-4c6c-8988-38418197046f",
+  "settlement": {
+    "status": "finalized",
+    "transaction_hash": "98b0274318f0e71c9e722a1b650d29ca877f194d98e9741846a6ed1a68b51b72",
+    "explorer": "https://ccdexplorer.io/mainnet/transaction/98b0274318f0e71c9e722a1b650d29ca877f194d98e9741846a6ed1a68b51b72",
+    "block_height": 54794219,
+    "block_hash": "d09cc957cbc4731c1c80723253df0f292c84e0c9f4fbbc21fa20e08e7a8a0ce2",
+    "block_time_utc": "2026-11-26T10:11:51.785Z",
+    "buyer_account_suffix": "VtGCu",
+    "recipient_account_suffix": "QXEc",
+    "amount_microccd": 1000000,
+    "buyer_fee_microccd": 0,
+    "fee_sponsor_account_suffix": "NprXf",
+    "sponsor_fee_microccd": 5205281,
+    "observed_via": "grpc.mainnet.concordium.software:20000",
+    "observed_at_utc": "2026-11-26T10:26:38.453Z"
+  },
+  "seller_receipt": {
+    "source": "Receipt details supplied by the purchase owner",
+    "determination": "CLEAR_WITH_CEILING",
+    "payment_status": "AUTHORIZED_PENDING_GATEWAY_SETTLEMENT",
+    "receipt_sha256": "16299d534398a7fdf2714a5a79c26b1488b3af66c1e1f678423c4159beb4faf8"
+  }
+}

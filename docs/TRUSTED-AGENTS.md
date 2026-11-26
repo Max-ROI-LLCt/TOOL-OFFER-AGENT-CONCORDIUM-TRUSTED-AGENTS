@@ -2,6 +2,19 @@
 
 **November 21, 2026 · Checkpoint 1: project, team and idea.** Kingan Logic is extending Tool Offer Agent into a walletless buyer’s agent. A badge answers *who is accountable?* A mandate answers *what may this agent request?* A buyer’s wallet approval answers *may this transfer be made?* A delivery check answers *did the buyer get what was agreed?* None substitutes for another.
 
+## November 26 Mainnet Diagnose purchase
+
+Tool Offer paid FAHCE **1 CCD** for Diagnose on invoice `e78b972e-ba60-44ea-8e23-8d5610d5e870`. It replaced expired invoice `5addf462-cd58-4c6c-8988-38418197046f`.
+
+| Charge | Paid by | Amount |
+| --- | --- | ---: |
+| Diagnose assessment paid to merchant `…QXEc` | Buyer `…VtGCu` | 1 CCD |
+| Concordium network fee | Sponsor `…NprXf` | 5.205281 CCD |
+
+**On-chain transfer.** Concordium’s Mainnet node confirmed finalization in block **54,794,219** at **10:11:51.785 UTC**. The buyer paid zero network fee. [98b0274318f0e71c9e722a1b650d29ca877f194d98e9741846a6ed1a68b51b72 on CCDExplorer](https://ccdexplorer.io/mainnet/transaction/98b0274318f0e71c9e722a1b650d29ca877f194d98e9741846a6ed1a68b51b72)
+
+**Seller receipt.** The purchase owner reported FAHCE’s Diagnose result as **`CLEAR_WITH_CEILING`**. The receipt’s own payment status remains **`AUTHORIZED_PENDING_GATEWAY_SETTLEMENT`**. The owner supplied receipt SHA-256 `16299d534398a7fdf2714a5a79c26b1488b3af66c1e1f678423c4159beb4faf8`. [Mainnet purchase record](../evidence/concordium-mainnet-diagnose-2026-11-26.json)
+
 ## Verify the November 26 sponsored purchase
 
 Tool Offer bought FAHCE’s Diagnose assessment of the synthetic Berlin report. Invoice `03b352b4-d915-4b45-91ac-1be894100b1a` identifies both the purchase and the signed Diagnose run.
@@ -77,6 +90,6 @@ The Python suite rejects changed actions, wrong signers, expired mandates and re
 1. **Identity and authority.** Demonstrate both registry identities and the exact buyer mandate in one live trace. Bind the service, supplier, recipient, amount, network, scope and expiry, and show enforcement of revocation and the pre-execution FAHCE decision. The November 22 wallet approval and the local mandate tests cover different steps.
 2. **Concordium x402.** The November 26 evidence ties a sponsored Testnet transfer to the paid invoice and signed Diagnose result. To complete the protocol trace, publish the original challenge and show how the facilitator checked settlement against its terms.
 3. **Delivery, repair and recovery.** Give a judge a portable record tying finality to independent buyer acceptance. Show that recovery after a restart returns the same delivery with one payment and one dispatch. For a rejected delivery, preserve the original, bind one authorized repair to the failed claims, and rerun the same buyer acceptance checks against both versions. Keep the evidence portable. Version any proposed acceptance-rule change, obtain owner approval before applying it, and demonstrate rollback to the approved baseline.
-4. **Mainnet.** Tool Offer’s Mainnet registry entry is #5135. Before a Mainnet purchase, verify both Mainnet identities, the recipient, genesis, tariff and fee limits, and review replay protection, monitoring, custody and recovery on that network. Mainnet settlement requires its own transaction evidence.
+4. **Mainnet.** Tool Offer’s Mainnet registry entry is #5135. For future purchases, verify both Mainnet identities, the recipient, genesis, tariff and fee limits, and review replay protection, monitoring, custody and recovery on that network.
 
 **Submission.** Checkpoint 1 is **November 22, 2026 at 23:59 UTC**. Final submission is **December 9, 2026 at 23:59 UTC**. The November 22 transaction is available on CCDExplorer. Remaining submission material includes the ≤3-minute video and instructions for reproducing the end-to-end Testnet flow. [Organizer brief](https://www.concordium.com/article/concordium-trusted-agents-hackathon-encode-club) · [Encode programme](https://www.encodeclub.com/programmes/concordium-trusted-agents-hackathon)
