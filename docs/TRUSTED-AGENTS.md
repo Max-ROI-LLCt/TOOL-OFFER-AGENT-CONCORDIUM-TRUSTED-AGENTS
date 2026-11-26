@@ -4,7 +4,7 @@
 
 ## November 26 Mainnet Diagnose purchase
 
-Tool Offer paid FAHCE **1 CCD** for Diagnose on invoice `e78b972e-ba60-44ea-8e23-8d5610d5e870`. It replaced expired invoice `5addf462-cd58-4c6c-8988-38418197046f`.
+One private checkout completed a FAHCE Diagnose on Concordium Mainnet. The checkout operator reports that FAHCE served an HTTP 402 challenge for invoice `5addf462-cd58-4c6c-8988-38418197046f` with a verified sponsor signature. That invoice expired. The buyer’s wallet then submitted the transfer for replacement invoice `e78b972e-ba60-44ea-8e23-8d5610d5e870`. The **1 CCD** amount applies to that checkout. [Purchase record with both invoice IDs](../evidence/concordium-mainnet-diagnose-2026-11-26.json)
 
 | Charge | Paid by | Amount |
 | --- | --- | ---: |
@@ -13,7 +13,7 @@ Tool Offer paid FAHCE **1 CCD** for Diagnose on invoice `e78b972e-ba60-44ea-8e23
 
 **On-chain transfer.** Concordium’s Mainnet node confirmed finalization in block **54,794,219** at **10:11:51.785 UTC**. The buyer paid zero network fee. [98b0274318f0e71c9e722a1b650d29ca877f194d98e9741846a6ed1a68b51b72 on CCDExplorer](https://ccdexplorer.io/mainnet/transaction/98b0274318f0e71c9e722a1b650d29ca877f194d98e9741846a6ed1a68b51b72)
 
-**Seller receipt.** The purchase owner reported FAHCE’s Diagnose result as **`CLEAR_WITH_CEILING`**. The receipt’s own payment status remains **`AUTHORIZED_PENDING_GATEWAY_SETTLEMENT`**. The owner supplied receipt SHA-256 `16299d534398a7fdf2714a5a79c26b1488b3af66c1e1f678423c4159beb4faf8`. [Mainnet purchase record](../evidence/concordium-mainnet-diagnose-2026-11-26.json)
+**Seller receipt.** FAHCE returned **`CLEAR_WITH_CEILING`** for the supplied evidence. The receipt’s own payment status remains **`AUTHORIZED_PENDING_GATEWAY_SETTLEMENT`**. FAHCE’s published card confirms the receipt SHA-256 supplied by the purchase owner, `16299d534398a7fdf2714a5a79c26b1488b3af66c1e1f678423c4159beb4faf8`, and ties it to the replacement invoice and finalized transfer. [FAHCE Mainnet card](https://fahce.kinganlogic.com/.well-known/agent-card-5134-v1.json)
 
 ## Verify the November 26 sponsored purchase
 
@@ -35,6 +35,26 @@ The receipt SHA-256 below covers the full signed response encoded as compact, so
 ```text
 9b21161e5372adeef7b870df8db2843f832e68e13e2b533f3aa1aa8c9af9f564
 ```
+
+## Account activity on CCDExplorer
+
+The counts below cover each account’s full Transactions tab as read on November 26, 2026, including its creation. Several accounts appear in the same transaction. The linked purchase records above identify the transfers that have corresponding Diagnose results.
+
+### Mainnet
+
+| Account and role | Activity visible on CCDExplorer |
+| --- | --- |
+| [104916 · buyer](https://ccdexplorer.io/mainnet/account/104916/alias/11ddJvKPkFEGd572VtGCu) · 13 entries | Received 2,680 CCD from the account labeled KuCoin #2. Sent 2, 200 and 500 CCD to the seller, then three transfers of 53.118593 CCD each. Sent 300 and 75 CCD to account 104964. On November 22 it reserved 136.285487 CCD in the bundle contract and received 83.867992 CCD back on capture. On November 26 it sent the seller 1 CCD for Diagnose. |
+| [104920 · seller and registered owner](https://ccdexplorer.io/mainnet/account/104920/alias/cFb6Jdx4D73bBTCfiQXEc) · 22 entries | Received the buyer’s seven direct transfers, including the 1 CCD purchase, plus 52.417495 CCD from the November 22 bundle capture. Six CIS-8004 registrations and seven card updates cover FAHCE #5134, Tool Offer #5135, Kingan Logic Systems, NPL, Torivane and Partizan. After settlement the owner updated FAHCE’s card hash in block 54,795,089. [FAHCE card update](https://ccdexplorer.io/mainnet/transaction/c7dd599cce89988c62b37b99c352eb3d31faa8730866cafe59111eeeeed54ae7) |
+| [104964 · November 26 fee sponsor](https://ccdexplorer.io/mainnet/account/104964/alias/M7tqcWj3cfJtAM53NprXf) · 8 entries | Received the buyer’s 300 and 75 CCD transfers. On November 22 it deployed the module, initialized `fahce_bundle` at `10111,0`, updated its credential keys and called `capture`. The contract paid the seller 52.417495 CCD and returned 83.867992 CCD to the buyer. On November 26 this account paid the 5.205281 CCD network fee. [November 22 capture](https://ccdexplorer.io/mainnet/transaction/6c76e046bcb0072bc11c063b099d0c4af059e47da1448db1bcb92751ba839db3) |
+
+### Testnet
+
+| Account and role | Activity visible on CCDExplorer |
+| --- | --- |
+| [19433 · buyer](https://ccdexplorer.io/testnet/account/19433/alias/ynTdQSDLkg63Mo8Pbgt6n) · 14 entries | Received 20,000 CCD from account 12. Sent the seller 110.116999 and 17.205781 CCD, then six transfers of 52 CCD each (four on November 21, one on November 22 and one on November 26). Deployed the bundle module and made two 135.2 CCD reservations at `13113,0`. It called `expire` on the first and received 135.2 CCD back. [Expiry and refund](https://ccdexplorer.io/testnet/transaction/41b047ae42db2537e2e409e7165c2928ffc6b983af21e866ddbc31015dfa1a6d) |
+| [19470 · seller and registered owner](https://ccdexplorer.io/testnet/account/19470/alias/TomNBePZ25YQ2oJTqXpTY) · 26 entries | Received 20,000 CCD from account 12, the buyer’s eight direct transfers and 135.2 CCD from the second bundle reservation. Its history shows six registrations, eight card updates and one rejected contract call. On November 26 the owner updated the cards for FAHCE #1207 and Tool Offer #1206. [FAHCE update](https://ccdexplorer.io/testnet/transaction/e27819d77c3561dcf5e899f22baf3f317bce0e0abfd08a5a0fe7606f9f95e526) · [Tool Offer update](https://ccdexplorer.io/testnet/transaction/2a5a38e5094b37a943f122034722bf112e4300e86000ca00c7b800c7fb429995) |
+| [19709 · verifier](https://ccdexplorer.io/testnet/account/19709/alias/EiJHV6iG2ArHU4knzQE3B) · 5 entries | Received 20,000 CCD from account 12, initialized `fahce_bundle` at `13113,0` and updated its credential keys. On November 22 its `capture` call released 135.2 CCD to the seller. The November 26 purchase lists a separate facilitator, account **19003** (`…FGGrS1`), as payer of the **5.214944 CCD** fee. [Verifier’s capture](https://ccdexplorer.io/testnet/transaction/4091f253f762328bf7274ba985b59b362dc99c24b6a5f65125330802bd751523) · [Sponsored purchase](https://ccdexplorer.io/testnet/transaction/44b51cfb0aa49ca5ecdb751e19f092b970a5bd630301994b3b6c6dfbf0f61068) |
 
 ## Verify the November 22 Testnet purchase
 
@@ -89,8 +109,8 @@ The Python suite rejects changed actions, wrong signers, expired mandates and re
 ## From checkpoint to production
 
 1. **Identity and authority.** Demonstrate both registry identities and the exact buyer mandate in one live trace. Bind the service, supplier, recipient, amount, network, scope and expiry, and show enforcement of revocation and the pre-execution FAHCE decision. The November 22 wallet approval and the local mandate tests cover different steps.
-2. **Concordium x402.** The November 26 evidence ties a sponsored Testnet transfer to the paid invoice and signed Diagnose result. To complete the protocol trace, publish the original challenge and show how the facilitator checked settlement against its terms.
+2. **Concordium x402.** The November 26 Testnet record ties the sponsored transfer to the paid invoice and signed Diagnose result. The Mainnet checkout served a sponsor-signed challenge before the wallet paid the replacement invoice. Publishing a redacted challenge and the facilitator’s settlement checks would let judges independently reproduce that part of the trace.
 3. **Delivery, repair and recovery.** Give a judge a portable record tying finality to independent buyer acceptance. Show that recovery after a restart returns the same delivery with one payment and one dispatch. For a rejected delivery, preserve the original, bind one authorized repair to the failed claims, and rerun the same buyer acceptance checks against both versions. Keep the evidence portable. Version any proposed acceptance-rule change, obtain owner approval before applying it, and demonstrate rollback to the approved baseline.
-4. **Mainnet.** Tool Offer’s Mainnet registry entry is #5135. For future purchases, verify both Mainnet identities, the recipient, genesis, tariff and fee limits, and review replay protection, monitoring, custody and recovery on that network.
+4. **Mainnet operations.** Tool Offer is registered as Mainnet agent #5135 and completed the private Diagnose checkout described above. FAHCE’s card records that this purchase did not consult the registry. Remaining production checks include verifying both identities at checkout, enforcing recipient, genesis, tariff and fee limits, and testing replay protection, monitoring, custody and recovery. [Tool Offer Mainnet badge](https://agent-registry-mcp.concordium.com/v1/check-badge/Mf22onHpsSQaWB9iCEdWR?network=mainnet)
 
 **Submission.** Checkpoint 1 is **November 22, 2026 at 23:59 UTC**. Final submission is **December 9, 2026 at 23:59 UTC**. The November 22 transaction is available on CCDExplorer. Remaining submission material includes the ≤3-minute video and instructions for reproducing the end-to-end Testnet flow. [Organizer brief](https://www.concordium.com/article/concordium-trusted-agents-hackathon-encode-club) · [Encode programme](https://www.encodeclub.com/programmes/concordium-trusted-agents-hackathon)
