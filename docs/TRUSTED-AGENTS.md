@@ -11,7 +11,7 @@ Tool Offer bought FAHCE’s Diagnose assessment of the synthetic Berlin report. 
 | Diagnose assessment paid to FAHCE account `…TqXpTY` | Buyer `…Pbgt6n` | 52 CCD |
 | Concordium network fee | Facilitator `…FGGrS1` | 5.214944 CCD |
 
-**Settlement.** The sponsored V1 transfer finalized in Testnet block **51,310,007**, with block time **07:37:20.495 UTC**. Compare the transaction hash and block in the purchase record with the public explorer. [Testnet transaction](https://ccdexplorer.io/testnet/transaction/44b51cfb0aa49ca5ecdb751e19f092b970a5bd630301994b3b6c6dfbf0f61068) · [Purchase evidence](../evidence/concordium-testnet-diagnose-2026-11-26.json)
+**Settlement.** The sponsored V1 transfer finalized in Testnet block **51,310,007**, with block time **07:37:20.495 UTC**. Compare the transaction hash and block in the purchase record with CCDExplorer. [44b51cfb0aa49ca5ecdb751e19f092b970a5bd630301994b3b6c6dfbf0f61068](https://ccdexplorer.io/testnet/transaction/44b51cfb0aa49ca5ecdb751e19f092b970a5bd630301994b3b6c6dfbf0f61068) · [Purchase evidence](../evidence/concordium-testnet-diagnose-2026-11-26.json)
 
 **Delivery.** At **08:29:33 UTC**, the authenticated `POST /testnet/buy/result` returned **HTTP 200**. FAHCE recorded the payment admission as `VERIFIED` and the Diagnose result as **`CLEAR_WITH_CEILING`**. The assessment covers the claims in the submitted report against the supplied synthetic evidence.
 
