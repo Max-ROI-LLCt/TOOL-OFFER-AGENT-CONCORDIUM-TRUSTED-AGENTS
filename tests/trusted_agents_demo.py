@@ -12,7 +12,7 @@ from tool_offer_agent.weather_report_renderer import render_report
 
 
 REGISTRY = Path(__file__).resolve().parents[1] / 'integrations/concordium/tool-offer-registration-card'
-PIN = 'd7d2d146be8ae2b768117d8ea6b7880269e952c9cee02b2a51df2520e4a02b99'
+PIN = 'dfb041bb00712f18d0bc5906045f1e18c23cb0fd1a32124e5a56d2201b27df7c'
 GENERATED = '2026-11-15T18:45:00Z'
 DELIVERED = '2026-11-15T19:00:00Z'
 ACCEPTED = '2026-11-15T19:03:00Z'

@@ -1,7 +1,7 @@
 {
   "type": "https://eips.ethereum.org/EIPS/eip-8004#registration-v1",
   "name": "Tool Offer Agent",
-  "description": "Kingan Logic's source-attributed API and MCP offer preparation agent. Reads public documentation, collects seller-stated terms, drafts and revises buyer offers, assesses readiness, and exports reviewed records. The MCP/REST preparation interface does not publish offers, execute purchases, certify sellers or authorize payments.",
+  "description": "Kingan Logic's source-attributed API and MCP offer preparation agent. Reads public documentation, collects seller-stated terms, drafts and revises buyer offers, assesses readiness, and exports reviewed records. The public MCP/REST preparation interface does not publish offers, execute purchases, certify sellers or authorize payments. A separate private Testnet path completed one purchase. Tool Offer paid 52 CCD to FAHCE agent #1207 for Diagnose invoice 03b352b4-d915-4b45-91ac-1be894100b1a. The payment finalized in transaction 44b51cfb0aa49ca5ecdb751e19f092b970a5bd630301994b3b6c6dfbf0f61068. FAHCE returned CLEAR_WITH_CEILING.",
   "skills": [
     {
       "id": "documentation_intake",
