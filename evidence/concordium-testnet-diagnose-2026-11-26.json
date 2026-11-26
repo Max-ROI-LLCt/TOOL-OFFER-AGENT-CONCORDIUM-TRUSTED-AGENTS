@@ -1,0 +1,42 @@
+{
+  "service": "FAHCE Diagnose",
+  "network": "Concordium Testnet",
+  "invoice_id": "03b352b4-d915-4b45-91ac-1be894100b1a",
+  "settlement": {
+    "protocol": "x402",
+    "scheme": "exact",
+    "transaction_version": 1,
+    "transaction_hash": "44b51cfb0aa49ca5ecdb751e19f092b970a5bd630301994b3b6c6dfbf0f61068",
+    "explorer": "https://ccdexplorer.io/testnet/transaction/44b51cfb0aa49ca5ecdb751e19f092b970a5bd630301994b3b6c6dfbf0f61068",
+    "status": "finalized",
+    "block_height": 51310007,
+    "block_hash": "636ae4e4634c222110fb687ec4f9bb39d6363734628c01e198473e6b3b2fa347",
+    "block_time_utc": "2026-11-26T07:37:20.495Z",
+    "buyer_account_suffix": "Pbgt6n",
+    "recipient_account_suffix": "TqXpTY",
+    "amount_microccd": 52000000,
+    "fee_sponsor_account_suffix": "FGGrS1",
+    "sponsor_fee_microccd": 5214944
+  },
+  "seller_result": {
+    "method": "POST",
+    "path": "/testnet/buy/result",
+    "read_at_utc": "2026-11-26T08:29:33.505Z",
+    "http_status": 200,
+    "admission": "VERIFIED",
+    "seller_verification": true,
+    "determination": "CLEAR_WITH_CEILING",
+    "claim_ceiling": "PILOT_DETERMINISTIC_HEURISTIC_ONLY_NO_MODEL_ANALYSIS",
+    "input_sha256": "d8766c72f91b984438bfff0fded80cc418e0f30f945123b91fbab3822ebef9dc",
+    "receipt_sha256": "9b21161e5372adeef7b870df8db2843f832e68e13e2b533f3aa1aa8c9af9f564",
+    "receipt_hash_encoding": "UTF-8 compact JSON of the complete signed Diagnose response, with sorted object keys and no trailing newline."
+  },
+  "verification": {
+    "live_bridge_error": "RECEIPT_VERIFICATION_FAILED",
+    "offline_attestation_verified": true,
+    "offline_verified_at_utc": "2026-11-26T08:31:27.910Z",
+    "original_input_matched": true,
+    "finalized_payment_matched": true,
+    "method": "Maintainer verified the saved attestation at issuance against the pinned FAHCE policy and retained Microsoft Azure Attestation public keys."
+  }
+}

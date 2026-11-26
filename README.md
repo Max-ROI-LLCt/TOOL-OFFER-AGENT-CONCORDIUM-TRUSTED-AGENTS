@@ -4,12 +4,13 @@
 
 **Stranger Builds winner — Best Use of Fetch AI.** Fetch AI announced Tool Offer Agent as the Best Use of Fetch AI category winner in the Stranger Builds event Slack. The [original Fetch AI challenge](https://www.fetch.ai/events/hackathons/stranger-builds-1/hackpack) and the [original judging snapshot](https://github.com/Max-ROI-LLCt/TOOL-OFFER-AGENT-STRANGER-BUILDS/tree/c42a327af76939b4c8a601fc6e4ddffe168b5ddd) are preserved. The award is for Stranger Builds, not the ongoing Concordium event.
 
-## Concordium Trusted Agents — Checkpoint 1
+## Concordium Trusted Agents
 
-**Can a buyer let an agent arrange one purchase and keep control of the wallet?** On November 22, Tool Offer submitted its saved synthetic Berlin report and supporting document to FAHCE for a Diagnose assessment. The wallet owner approved one 52 CCD payment on Concordium Testnet. The transfer finalized, and FAHCE returned a signed determination. Tool Offer and FAHCE are both Kingan Logic projects. [Testnet transaction](https://ccdexplorer.io/testnet/transaction/9ccfb5f42aba74003a0caefb1b90387cc5a4dfad32870a68d5e6c5ee8a7bbbc9) · [Judge’s guide to the evidence](docs/TRUSTED-AGENTS.md#verify-the-november-22-testnet-purchase)
+On **November 26, 2026**, Tool Offer bought a FAHCE Diagnose assessment of its synthetic Berlin report through x402 on Concordium Testnet. The buyer paid **52 CCD** for the assessment. The facilitator sponsored the transfer and paid the **5.214944 CCD** network fee. Tool Offer Agent and FAHCE are both Kingan Logic projects. [Inspect the sponsored purchase](docs/TRUSTED-AGENTS.md#verify-the-november-26-sponsored-purchase) · [View the transaction on CCDExplorer](https://ccdexplorer.io/testnet/transaction/44b51cfb0aa49ca5ecdb751e19f092b970a5bd630301994b3b6c6dfbf0f61068)
 
-| Available to judges on November 22, 2026 | What it proves |
+| Evidence for judges | What to check |
 | --- | --- |
+| [November 26 sponsored purchase](evidence/concordium-testnet-diagnose-2026-11-26.json) | FAHCE returned `CLEAR_WITH_CEILING`. The live bridge reported `RECEIPT_VERIFICATION_FAILED`. The maintainer subsequently verified the saved receipt offline. |
 | **Testnet — Tool Offer Agent #1206:** [owner account on CCDExplorer](https://ccdexplorer.io/testnet/account/19470/alias/TomNBePZ25YQ2oJTqXpTY) · [Agent Card](https://tooloffer.kinganlogic.com/.well-known/agent-card-tooloffer-testnet-1206-v1.json) · [registry readback](integrations/concordium/tool-offer-registration-card/testnet-1206-verification.json) | Compare the owner address and card hash with the active entry in the [Testnet registry](https://ccdexplorer.io/testnet/contract/12802/0). This identifies the registered owner, not the wallet paying for a purchase. |
 | [Exact-mandate verification](tool_offer_agent/concordium_mandate_auth.py) · [Concordium wallet proof](bridge/concordium-testnet/verify-account.mjs) | Offline tests distinguish an agent’s signature, account-key control and permission to spend. Neither proof moves funds. |
 | [Runnable demo and verifier](docs/TRUSTED-AGENTS.md#run-the-checkpoint) · [buyer acceptance checker](tool_offer_agent/weather_report_acceptance.py) | A valid synthetic report passes; changing one summary value fails against the buyer’s independently reconstructed source. No login or wallet needed. |
@@ -17,7 +18,7 @@
 
 **Try it now:** from the repository root, run `python3.12 -m tests.trusted_agents_demo`. The expected results are `LOCAL_ACCEPTED`, `LOCAL_REJECTED` (check `A09`), and `NOT_SUBMITTED`.
 
-**Next evidence.** Trace an x402 challenge through settlement verification on Concordium, then show that a buyer can independently verify delivery and recover the same outcome after a restart. The failure case calls for bounded, authorized repair and revalidation. [Build log and production gates](docs/TRUSTED-AGENTS.md#from-checkpoint-to-production) · [Encode × Concordium Trusted Agents](https://www.encodeclub.com/programmes/concordium-trusted-agents-hackathon)
+**Next evidence.** Reproduce receipt verification in the live bridge and demonstrate that a buyer can recover the same outcome after a restart. For a rejected delivery, demonstrate an authorized repair and recheck the result. [Build log and production gates](docs/TRUSTED-AGENTS.md#from-checkpoint-to-production) · [Encode × Concordium Trusted Agents](https://www.encodeclub.com/programmes/concordium-trusted-agents-hackathon)
 
 **Path to production — Mainnet identity:** Tool Offer Agent is registered separately as **#5135**. See the [Mainnet owner account on CCDExplorer](https://ccdexplorer.io/mainnet/account/104920/alias/cFb6Jdx4D73bBTCfiQXEc) and the [Mainnet Agent Card](https://tooloffer.kinganlogic.com/.well-known/agent-card-tool-offer-5135-v1.json). This registration does not show that Mainnet checkout is live. Neither owner-account link is a payment receipt.
 

@@ -2,6 +2,27 @@
 
 **November 21, 2026 · Checkpoint 1: project, team and idea.** Kingan Logic is extending Tool Offer Agent into a walletless buyer’s agent. A badge answers *who is accountable?* A mandate answers *what may this agent request?* A buyer’s wallet approval answers *may this transfer be made?* A delivery check answers *did the buyer get what was agreed?* None substitutes for another.
 
+## Verify the November 26 sponsored purchase
+
+Tool Offer bought FAHCE’s Diagnose assessment of the synthetic Berlin report. Invoice `03b352b4-d915-4b45-91ac-1be894100b1a` identifies both the purchase and the signed Diagnose run.
+
+| Charge | Paid by | Amount |
+| --- | --- | ---: |
+| Diagnose assessment paid to FAHCE account `…TqXpTY` | Buyer `…Pbgt6n` | 52 CCD |
+| Concordium network fee | Facilitator `…FGGrS1` | 5.214944 CCD |
+
+**Settlement.** The sponsored V1 transfer finalized in Testnet block **51,310,007**, with block time **07:37:20.495 UTC**. Compare the transaction hash and block in the purchase record with the public explorer. [Testnet transaction](https://ccdexplorer.io/testnet/transaction/44b51cfb0aa49ca5ecdb751e19f092b970a5bd630301994b3b6c6dfbf0f61068) · [Purchase evidence](../evidence/concordium-testnet-diagnose-2026-11-26.json)
+
+**Delivery.** At **08:29:33 UTC**, the authenticated `POST /testnet/buy/result` returned **HTTP 200**. FAHCE recorded the payment admission as `VERIFIED` and the Diagnose result as **`CLEAR_WITH_CEILING`**. The assessment covers the claims in the submitted report against the supplied synthetic evidence.
+
+**Receipt verification.** The live bridge reported **`RECEIPT_VERIFICATION_FAILED`** on that HTTP 200 read. The maintainer later verified the saved receipt’s attestation offline using the pinned FAHCE policy and Microsoft Azure Attestation public keys. The signed input digest matched the submitted report, and the returned payment details matched the finalized transaction.
+
+The receipt SHA-256 below covers the full signed response encoded as compact, sorted-key UTF-8 JSON with no trailing newline.
+
+```text
+9b21161e5372adeef7b870df8db2843f832e68e13e2b533f3aa1aa8c9af9f564
+```
+
 ## Verify the November 22 Testnet purchase
 
 Tool Offer sent FAHCE 48 claims from a saved synthetic Berlin report and one supporting document through its machine checkout. The buyer approved the native CCD transfer in Concordium Wallet. The service purchased was **Diagnose**, an assessment of those claims against the supplied evidence.
@@ -47,11 +68,12 @@ The Python suite rejects changed actions, wrong signers, expired mandates and re
 | Testnet identity | Compare [the published Agent Card](https://tooloffer.kinganlogic.com/.well-known/agent-card-tooloffer-testnet-1206-v1.json) with the [retained registry readback](../integrations/concordium/tool-offer-registration-card/testnet-1206-verification.json). Tool Offer is #1206 in [Testnet CIS-8004 contract 12802,0](https://ccdexplorer.io/testnet/contract/12802/0). The local comparison is not a fresh on-chain query. |
 | November 21 public build | [Mandate binding](../tool_offer_agent/concordium_mandate.py), [agent signature verification](../tool_offer_agent/concordium_mandate_auth.py), [wallet binding](../bridge/concordium-testnet/verify-wallet-binding.mjs), [independent checker](../tool_offer_agent/weather_report_acceptance.py) and [portable fixture demo](../tests/trusted_agents_demo.py) are available here. The 1 CCD synthetic report is a separate scenario, **not** a live quote for FAHCE Diagnose. |
 | November 22 live purchase | Tool Offer bought a FAHCE Diagnose assessment with a wallet-approved native CCD transfer on Testnet. [Check the transfer and read the result](#verify-the-november-22-testnet-purchase) |
+| November 26 sponsored x402 purchase | A facilitator paid the fee on the buyer’s finalized 52 CCD transfer. [Result and receipt verification](#verify-the-november-26-sponsored-purchase) |
 
 ## From checkpoint to production
 
 1. **Identity and authority.** Demonstrate both registry identities and the exact buyer mandate in one live trace. Bind the service, supplier, recipient, amount, network, scope and expiry, and show enforcement of revocation and the pre-execution FAHCE decision. The November 22 wallet approval and the local mandate tests cover different steps.
-2. **Concordium x402.** Capture the HTTP 402 challenge, identify its issuer, and show which component verifies settlement against that challenge. The November 22 transfer used a native CCD invoice and memo. The earlier Base USDC evidence belongs to the Stranger Builds integration.
+2. **Concordium x402.** The November 26 evidence ties a sponsored Testnet transfer to the paid invoice and signed Diagnose result. To complete the protocol trace, publish the original challenge and show how the facilitator checked settlement against its terms.
 3. **Delivery, repair and recovery.** Give a judge a portable record tying finality to independent buyer acceptance. Show that recovery after a restart returns the same delivery with one payment and one dispatch. For a rejected delivery, preserve the original, bind one authorized repair to the failed claims, and rerun the same buyer acceptance checks against both versions. Keep the evidence portable. Version any proposed acceptance-rule change, obtain owner approval before applying it, and demonstrate rollback to the approved baseline.
 4. **Mainnet.** Tool Offer’s Mainnet registry entry is #5135. Before a Mainnet purchase, verify both Mainnet identities, the recipient, genesis, tariff and fee limits, and review replay protection, monitoring, custody and recovery on that network. Mainnet settlement requires its own transaction evidence.
 

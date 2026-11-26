@@ -1,6 +1,6 @@
 # Tool Offer Agent — public judging snapshot
 
-**Here for Encode × Concordium?** Inspect the November 22 wallet-authorized FAHCE purchase on Testnet, or run the local acceptance and rejection examples with a synthetic report. The rest of this page describes the earlier Stranger Builds release. [Live settlement evidence](docs/TRUSTED-AGENTS.md#verify-the-november-22-testnet-purchase) · [Local judge quickstart](docs/TRUSTED-AGENTS.md#run-the-checkpoint)
+**Here for Encode × Concordium?** Follow the November 26 sponsored payment from the buyer’s transfer to FAHCE’s signed Diagnose result. The guide also covers the November 22 transfer with memo and includes a local acceptance demo. [Sponsored Testnet purchase](docs/TRUSTED-AGENTS.md#verify-the-november-26-sponsored-purchase) · [Local judge quickstart](docs/TRUSTED-AGENTS.md#run-the-checkpoint)
 
 Publication handoff: **November 7, 2026 UTC**. This is an owner-authorized public snapshot, not the original private development repository or its Git history. Its initial commit records publication, not the dates when the underlying work or historical transactions occurred. A later owner-authorized follow-up adds [PolyForm Noncommercial 1.0.0](LICENSE), [attribution and judging permission](NOTICE), and [third-party notices](THIRD-PARTY-NOTICES.md). It does not relicense dependencies or external services.
 
