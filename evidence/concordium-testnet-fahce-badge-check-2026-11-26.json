@@ -1,0 +1,24 @@
+{
+  "scope": "Access to the existing Tool Offer Diagnose page after the November 26 purchase",
+  "page_mode": "paid invoice, read-only",
+  "registry_check": {
+    "event": "diagnose_seller_badge_check",
+    "route": "/",
+    "url": "https://agent-registry-mcp.concordium.com/v1/badge-check/JyP9XLiK2kzaUTCXVCeWL",
+    "http_status": 200,
+    "result": "ACTIVE",
+    "on_chain_status": "Active",
+    "badge_valid": true,
+    "checked_at_utc": "2026-11-26T09:29:46.925+00:00"
+  },
+  "page_readback": {
+    "method": "GET",
+    "path": "/",
+    "port": 8767,
+    "status": 200,
+    "content_type": "text/html",
+    "purchase_html": true,
+    "cookie_issued": true,
+    "received_at_utc": "2026-11-26T09:29:46.925+00:00"
+  }
+}
