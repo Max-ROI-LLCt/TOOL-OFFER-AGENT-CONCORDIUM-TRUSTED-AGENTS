@@ -1,0 +1,83 @@
+{
+  "service": "FAHCE Diagnose",
+  "network": "Concordium Testnet",
+  "invoice_id": "03b352b4-d915-4b45-91ac-1be894100b1a",
+  "purchase_record": "concordium-testnet-diagnose-2026-11-26.json",
+  "replay_source_file_sha256": "0829f7847d66f0b41268fa94ed05e3c683d307f98e209d7d256eb50364a9b6de",
+  "sponsored_settlement": {
+    "protocol": "x402",
+    "transaction_version": 1,
+    "transaction_hash": "44b51cfb0aa49ca5ecdb751e19f092b970a5bd630301994b3b6c6dfbf0f61068",
+    "status": "finalized",
+    "block_height": 51310007,
+    "amount_microccd": 52000000,
+    "sponsor_fee_microccd": 5214944
+  },
+  "authenticated_result": {
+    "method": "POST",
+    "path": "/testnet/buy/result",
+    "read_at_utc": "2026-11-26T08:29:33.505Z",
+    "http_status": 200,
+    "admission": "VERIFIED",
+    "determination": "CLEAR_WITH_CEILING",
+    "buyer_bridge_revision": "7f115e68-f555-4540-9674-a2218a870847",
+    "buyer_verification_error": "RECEIPT_VERIFICATION_FAILED"
+  },
+  "offline_verification": {
+    "verified": true,
+    "verified_at_utc": "2026-11-26T08:31:27.910Z",
+    "verification_clock_utc": "2026-11-26T07:37:16.206Z"
+  },
+  "receipt_and_envelope": {
+    "seller_envelope_sha256_redacted": "73a89f51…a38cdd0e",
+    "attested_response_hash_redacted": "8996a0df…bebd6512",
+    "receipt_location_in_saved_response": "seller_result.receipt",
+    "receipt_location_in_buyer_export": "receipt",
+    "remaining_seller_result_equal": true
+  },
+  "same_invoice_bridge_recovery": {
+    "bridge_revision": "4cd3ac89-5a18-41cc-acd2-9bc6c9e84141",
+    "verified_at_utc": "2026-11-26T08:49:45.310Z",
+    "source": "Retained authenticated response for the paid invoice.",
+    "verified": true,
+    "canonical_receipt_sha256": "9b21161e5372adeef7b870df8db2843f832e68e13e2b533f3aa1aa8c9af9f564"
+  },
+  "local_worker_restart": {
+    "run_at_utc": "2026-11-27T13:32:59.640Z",
+    "runtime": "Local workerd processes using downloaded deployed Worker modules, a local buyer session and persistent SQLite.",
+    "workerd_build": "2026-11-13",
+    "bridge_revision": "4cd3ac89-5a18-41cc-acd2-9bc6c9e84141",
+    "historical_failure_reproduction": {
+      "first_failing_check": "Construct request for pinned Microsoft attestation signing keys",
+      "expected": "A supported redirect mode for the signing-key request.",
+      "observed": "workerd raised TypeError for redirect mode \"error\" when the same fetch expression was run separately.",
+      "issuer_requests_dispatched": 0
+    },
+    "current_verifier": {
+      "first_failing_check": null,
+      "redirect_mode": "manual",
+      "issuer_http_status": 200,
+      "matching_signers": 1,
+      "policy_sha256_redacted": "bc612857…5a81ae40",
+      "image_sha256_redacted": "564a29e4…6bb2815b",
+      "gateway_key_sha256_redacted": "ce6140f5…318f67c2",
+      "retained_signer_thumbprint_sha256_redacted": "3eadd600…ed00b801",
+      "current_signer_thumbprint_sha256_redacted": "3eadd600…ed00b801",
+      "verification_clock_utc": "2026-11-26T07:37:16.206Z"
+    },
+    "before_restart": {
+      "verified": true,
+      "canonical_sha256": "9b21161e5372adeef7b870df8db2843f832e68e13e2b533f3aa1aa8c9af9f564"
+    },
+    "after_restart": {
+      "verified": true,
+      "canonical_sha256": "9b21161e5372adeef7b870df8db2843f832e68e13e2b533f3aa1aa8c9af9f564"
+    },
+    "after_restart_source": "The fresh Worker process returned the verified buyer export from SQLite.",
+    "full_export_equal": true,
+    "both_exports_independently_reverified": true,
+    "additional_payments": 0,
+    "additional_dispatches": 0,
+    "live_seller_result_requests": 0
+  }
+}

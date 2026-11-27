@@ -1,6 +1,6 @@
 # Tool Offer Agent — public judging snapshot
 
-**Here for Encode × Concordium?** Follow the November 26 sponsored payment from the buyer’s transfer to FAHCE’s signed Diagnose result. The guide also covers the November 22 transfer with memo and includes a local acceptance demo. [Sponsored Testnet purchase](docs/TRUSTED-AGENTS.md#verify-the-november-26-sponsored-purchase) · [Local judge quickstart](docs/TRUSTED-AGENTS.md#run-the-checkpoint)
+**Here for Encode × Concordium?** Follow the November 26 sponsored payment through same-invoice receipt recovery and the November 27 local Worker restart. The guide also covers the November 22 native transfer and its retained buyer export. [Sponsored Testnet purchase](docs/TRUSTED-AGENTS.md#verify-the-november-26-sponsored-purchase) · [Local Worker restart](docs/TRUSTED-AGENTS.md#november-27-local-worker-restart) · [Native Testnet purchase](docs/TRUSTED-AGENTS.md#verify-the-november-22-testnet-purchase) · [Local judge quickstart](docs/TRUSTED-AGENTS.md#run-the-checkpoint)
 
 Publication handoff: **November 7, 2026 UTC**. This is an owner-authorized public snapshot, not the original private development repository or its Git history. Its initial commit records publication, not the dates when the underlying work or historical transactions occurred. A later owner-authorized follow-up adds [PolyForm Noncommercial 1.0.0](LICENSE), [attribution and judging permission](NOTICE), and [third-party notices](THIRD-PARTY-NOTICES.md). It does not relicense dependencies or external services.
 
@@ -13,8 +13,8 @@ The **initial** public snapshot, commit `12f2362c93e88684673fdede649e88b315099ce
 - [Agentverse entry point](https://agentverse.ai/agents/details/agent1qg0p9zy9rxqz83l5p8tr7vevguk3hny963luv4pd8nu8hp87qc0syk3c88a/profile).
 - [Homepage](https://tooloffer.kinganlogic.com/) and [canonical machine profile](https://tooloffer.kinganlogic.com/manifest.json).
 - MCP: `POST https://tooloffer.kinganlogic.com/mcp` (also `/mcp/`). REST: `POST https://tooloffer.kinganlogic.com/api/machine/{tool_name}`. See [machine access](https://tooloffer.kinganlogic.com/machine/) and [OpenAPI](https://tooloffer.kinganlogic.com/openapi.json) for identity-bound invocation; public discovery alone does not authorize calls.
-- Deployed release: **`66979784d826683d48d83d6639e924078a3a3476c3ab488a93a9a57519767f19`**; Agentverse runtime **revision 86**.
-- Cloudflare Worker version: `53fc2243-7f8e-4ed0-b795-8009c060a787`; deployment: `51d7a4a1-e1a3-455b-8ddd-c5f45e36bb80`.
+- The November 7 Agentverse deployment recorded **revision 86** for release **`66979784d826683d48d83d6639e924078a3a3476c3ab488a93a9a57519767f19`**.
+- The November 7 site deployment `51d7a4a1-e1a3-455b-8ddd-c5f45e36bb80` served Cloudflare Worker version `53fc2243-7f8e-4ed0-b795-8009c060a787`.
 
 [DEPLOYED-RELEASE.md](DEPLOYED-RELEASE.md) records deployment/readback, and `evidence/releases/revision-86/manifest.json` binds all 29 hosted Python members. The adjacent gzip contains that exact Python source, not hosted secrets or conversation storage. The application version, Git snapshot commit, hosted revision, release identifier and registry publication are distinct identities. Python wheel and companion npm package versions are historical packaging versions, not application release identifiers.
 

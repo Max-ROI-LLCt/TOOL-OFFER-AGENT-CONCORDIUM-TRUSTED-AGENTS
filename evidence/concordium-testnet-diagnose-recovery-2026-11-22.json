@@ -41,7 +41,29 @@
   "dispatch_run_matches_signed_result": true,
   "restart": {
     "action": "Tool Offer redeployed the Testnet buyer bridge between the two seller readbacks.",
-    "authenticated_buyer_download": "Pending comparison of a receipt exported after restart with the original signed response."
+    "authenticated_buyer_download": "One request required sign-in. A separate buyer export returned the previously verified receipt from the durable order.",
+    "buyer_export_attempt": {
+      "date_utc": "2026-11-25",
+      "invoice_id": "b760fd2c-013b-4e4e-9c39-c9d323b77ccd",
+      "method": "POST",
+      "path": "/api/receipt",
+      "http_status": 401,
+      "error": "SIGN_IN_REQUIRED",
+      "signed_response_bytes_downloaded": 0,
+      "observed_buyer_export_sha256": null
+    },
+    "retained_buyer_export": {
+      "invoice_id": "b760fd2c-013b-4e4e-9c39-c9d323b77ccd",
+      "source": "verified_durable_order",
+      "served_at_utc": "2026-11-25T09:18:35.785Z",
+      "recomputed_receipt_sha256": "9f20357fcaff6f0468a54d8c6bf173c7cfb6d90342badaecc45f6424adabb9a6",
+      "transaction_hash": "9ccfb5f42aba74003a0caefb1b90387cc5a4dfad32870a68d5e6c5ee8a7bbbc9",
+      "receipt_sha256_matches_native_trace": true,
+      "transaction_hash_matches_native_trace": true,
+      "verification": "Historical verification retained with the delivered order.",
+      "fresh_execution": false,
+      "provenance": "Buyer-provided comparison of the retained export with the November 22 native trace."
+    }
   },
   "mandate": {
     "local_test": "tests.test_concordium_mandate_auth.MandateSignatureTests.test_changed_mandate_with_matching_changed_action_denied",

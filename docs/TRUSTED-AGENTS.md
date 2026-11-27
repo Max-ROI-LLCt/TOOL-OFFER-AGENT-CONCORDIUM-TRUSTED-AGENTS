@@ -28,13 +28,19 @@ Tool Offer bought FAHCE’s Diagnose assessment of the synthetic Berlin report. 
 
 **Delivery.** At **08:29:33 UTC**, the authenticated `POST /testnet/buy/result` returned **HTTP 200**. FAHCE recorded the payment admission as `VERIFIED` and the Diagnose result as **`CLEAR_WITH_CEILING`**. The assessment covers the claims in the submitted report against the supplied synthetic evidence.
 
-**Receipt verification.** The live bridge reported **`RECEIPT_VERIFICATION_FAILED`** on that HTTP 200 read. The maintainer later verified the saved receipt’s attestation offline using the pinned FAHCE policy and Microsoft Azure Attestation public keys. The signed input digest matched the submitted report, and the returned payment details matched the finalized transaction.
+**Buyer verification and recovery.** The live bridge reported **`RECEIPT_VERIFICATION_FAILED`** on that HTTP 200 read. At **08:31:27 UTC**, the maintainer verified the saved receipt offline using the pinned FAHCE policy and Microsoft Azure Attestation public keys. The signed input digest matched the submitted report, and the payment details matched the finalized transaction. At **08:49:45 UTC**, the updated buyer bridge verified the retained response for the same paid invoice. [Dated recovery record](../evidence/concordium-testnet-diagnose-recovery-2026-11-27.json)
 
 The receipt SHA-256 below covers the full signed response encoded as compact, sorted-key UTF-8 JSON with no trailing newline.
 
 ```text
 9b21161e5372adeef7b870df8db2843f832e68e13e2b533f3aa1aa8c9af9f564
 ```
+
+### November 27 local Worker restart
+
+The maintainer replayed the saved authenticated response using the deployed Worker code in local `workerd` processes. The earlier revision reproduced the buyer error before sending a signing-key request. Running the same request expression separately showed that `workerd` rejected its `redirect: "error"` setting. The recovery revision used `manual` and found one matching issuer key. It verified the receipt at its November 26 issuance time, **07:37:16.206 UTC**, the same clock used for the offline pass.
+
+The first process verified and saved the buyer export in SQLite. After shutdown, a fresh process opened the same database and returned the identical export. The maintainer independently reverified both signed receipts with the current issuer keys. Each had the canonical SHA-256 printed above. The local replay made **zero additional payments, zero additional dispatches and zero live seller-result requests**. [Before and after restart, including both digests](../evidence/concordium-testnet-diagnose-recovery-2026-11-27.json)
 
 ## Account activity on CCDExplorer
 
@@ -65,7 +71,13 @@ Tool Offer sent FAHCE 48 claims from a saved synthetic Berlin report and one sup
 
 3. **Reproduce the buyer’s check.** From the public checkout, run `python3.12 -m tests.verify_testnet_diagnose`. It reads Concordium’s public Testnet service, checks the finalized transfer and finds one payment with the original invoice memo in the recorded account-history window. It also derives 48 expected claims from the 25 redistributable synthetic samples and compares their digest with the maintainer’s digest of the signed claims and support labels. [Redacted trace](../evidence/concordium-testnet-diagnose-recovery-2026-11-22.json) · [Verification code](../tests/verify_testnet_diagnose.py) · [Synthetic source](../evidence/berlin-synthetic-source-2026-11-17.json)
 
-The maintainers checked the original signed response, each evidence reference and the paid input privately. Two invoice-specific reads of FAHCE’s records, before and after a buyer bridge restart, each found one admission, one recorded dispatch and the same signed response digest. The dispatch run ID matched the signed result. The authenticated buyer-side receipt export after restart is still pending. Reviewers who hold the original request and response can add `--source evidence/berlin-synthetic-source-2026-11-17.json --request request.json --result receipt.json` to repeat the full comparison.
+The maintainers checked the original signed response, each evidence reference and the paid input privately. Two invoice-specific reads of FAHCE’s records, before and after a buyer bridge restart, each found one admission, one recorded dispatch and the same signed response digest. The dispatch run ID matched the signed result.
+
+On November 25, one `POST /api/receipt` for native invoice `b760fd2c-013b-4e4e-9c39-c9d323b77ccd` returned **HTTP 401 `SIGN_IN_REQUIRED`** and zero signed bytes.
+
+For the same invoice, the buyer retained a separate `verified_durable_order` export served at **2026-11-25T09:18:35.785Z**. Its recomputed receipt SHA-256 and transaction hash both matched the November 22 native trace. The export returned the order’s historical verification without a fresh Diagnose execution. [Native recovery record with both hashes](../evidence/concordium-testnet-diagnose-recovery-2026-11-22.json)
+
+Reviewers who hold the original request and response can add `--source evidence/berlin-synthetic-source-2026-11-17.json --request request.json --result receipt.json` to repeat the full comparison.
 
 ## Run the checkpoint
 
@@ -110,7 +122,7 @@ The Python suite rejects changed actions, wrong signers, expired mandates and re
 
 1. **Identity and authority.** Demonstrate both registry identities and the exact buyer mandate in one live trace. Bind the service, supplier, recipient, amount, network, scope and expiry, and show enforcement of revocation and the pre-execution FAHCE decision. The November 22 wallet approval and the local mandate tests cover different steps.
 2. **Concordium x402.** The November 26 Testnet record ties the sponsored transfer to the paid invoice and signed Diagnose result. The Mainnet checkout served a sponsor-signed challenge before the wallet paid the replacement invoice. Publishing a redacted challenge and the facilitator’s settlement checks would let judges independently reproduce that part of the trace.
-3. **Delivery, repair and recovery.** Give a judge a portable record tying finality to independent buyer acceptance. Show that recovery after a restart returns the same delivery with one payment and one dispatch. For a rejected delivery, preserve the original, bind one authorized repair to the failed claims, and rerun the same buyer acceptance checks against both versions. Keep the evidence portable. Version any proposed acceptance-rule change, obtain owner approval before applying it, and demonstrate rollback to the approved baseline.
+3. **Delivery, repair and recovery.** Give a judge a portable record tying finality to independent buyer acceptance. For a hosted buyer bridge restart, capture the authenticated export and the payment and dispatch counts for the same invoice. For a rejected delivery, preserve the original, bind one authorized repair to the failed claims, and rerun the same buyer acceptance checks against both versions. Keep the evidence portable. Version any proposed acceptance-rule change, obtain owner approval before applying it, and demonstrate rollback to the approved baseline.
 4. **Mainnet operations.** Tool Offer is registered as Mainnet agent #5135 and completed the private Diagnose checkout described above. FAHCE’s card records that this purchase did not consult the registry. Remaining production checks include verifying both identities at checkout, enforcing recipient, genesis, tariff and fee limits, and testing replay protection, monitoring, custody and recovery. [Tool Offer Mainnet badge](https://agent-registry-mcp.concordium.com/v1/check-badge/Mf22onHpsSQaWB9iCEdWR?network=mainnet)
 
 **Submission.** Checkpoint 1 is **November 22, 2026 at 23:59 UTC**. Final submission is **December 9, 2026 at 23:59 UTC**. The November 22 transaction is available on CCDExplorer. Remaining submission material includes the ≤3-minute video and instructions for reproducing the end-to-end Testnet flow. [Organizer brief](https://www.concordium.com/article/concordium-trusted-agents-hackathon-encode-club) · [Encode programme](https://www.encodeclub.com/programmes/concordium-trusted-agents-hackathon)
